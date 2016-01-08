@@ -1,0 +1,22 @@
+{
+  "name": "express-mongoose-api",
+  "description": "Basic starting point for Express based REST API with Mongoose",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --use_strict lib/server.js",
+    "dev": "./node_modules/.bin/nodemon --use_strict lib/server.js",
+    "forever": "forever start -a -l forever.log -o out.log -e err.log -c 'node --use_strict' lib/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.4",
+    "morgan": "^1.6.1"
+  }
+}
