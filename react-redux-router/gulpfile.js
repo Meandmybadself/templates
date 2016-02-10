@@ -16,8 +16,8 @@ const watchify = require('watchify')
 const babelify = require('babelify')
 const envify = require('envify/custom')
 const uglify = require('gulp-uglify')
-const cssmin = require('gulp-minify-css')
-const htmlmin = require('gulp-minify-html')
+const cssmin = require('gulp-cssnano')
+const htmlmin = require('gulp-htmlmin')
 const imagemin = require('gulp-imagemin')
 const pngquant = require('imagemin-pngquant')
 const rimraf = require('rimraf')
@@ -69,7 +69,7 @@ gulp.task('build:css', ['sass'], () => {
 
 gulp.task('build:html', () => {
   return gulp.src('dev/index.html')
-    .pipe(htmlmin())
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
 })
 
