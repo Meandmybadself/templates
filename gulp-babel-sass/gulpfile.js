@@ -44,7 +44,7 @@ gulp.task('sass', () => {
     }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dev/stylesheets/'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({match: '**/*.css'}))
 })
 
 gulp.task('babel', () => {
