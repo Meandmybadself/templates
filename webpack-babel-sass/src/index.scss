@@ -1,0 +1,28 @@
+@import '~normalize.css';
+@import 'theme/colors';
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+	text-transform: uppercase;
+	font-size: 5vw;
+  color: $white;
+	background: $black;
+}
+
+#application {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
