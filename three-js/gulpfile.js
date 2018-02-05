@@ -36,6 +36,7 @@ gulp.task('serve', ['sass', 'babel:watch'], () => {
     open: false,
     notify: false
   })
+  console.log('Browsersync initialized.')
   gulp.watch(`${DIR_SRC_STYLESHEETS}/src/*.scss`, ['sass'])
   gulp.watch(`${DIR_SRC}/*.html`).on('change', browserSync.reload)
 })
@@ -56,10 +57,12 @@ gulp.task('sass', () => {
 })
 
 gulp.task('babel', () => {
+  console.log('Babel task being called.')
   return compileDevJS()
 })
 
 gulp.task('babel:watch', ['babel'], () => {
+  log('Watching JavaScript for changes.')
   return compileDevJS(true)
 })
 
